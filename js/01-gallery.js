@@ -31,14 +31,14 @@ return galleryItems.map(({preview, original, description}) => {
 }
 
 imgContainer.addEventListener(`click`, onClickOpenModal);
- 
+ let instance = {};
 function onClickOpenModal(e) {
     e.preventDefault();
     if (e.target.nodeName !== `IMG`) {
         return
     }
     const largeImg = e.target.dataset.source;
-    const instance = basicLightbox.create (`
+    instance = basicLightbox.create (`
     <img src="${largeImg}" width="800" height="600">
     <a>Close</a>`, {
       onShow: () => {
