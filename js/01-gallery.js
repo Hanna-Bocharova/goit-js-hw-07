@@ -57,9 +57,6 @@ function onClickOpenModal(e) {
 
 function offModal(e) {
     if (e.code === "Escape"){
-    instance.close(() => {
-        window.removeEventListener("keydown", offModal);
-    })
+    instance.close()
 }   
-
 }
